@@ -11,8 +11,10 @@ with open("links.txt","r") as f:
 
 links = [link.rstrip("\n") for link in links]
 
+with open("config.yml","r") as f:
+    config = yaml.load(f)
 
-speaker_name = "FunIndianGuy"
+speaker_name = config["speaker_name"]
 
 SAVE_PATH = "audio/"
 ydl_opts = {
